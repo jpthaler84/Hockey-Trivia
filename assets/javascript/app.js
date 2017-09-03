@@ -1,7 +1,5 @@
 // Create an array for questions
 
-// var questions = ["What is it called when a player swings their stick at an opposing player or breaks their stick with theirs?", "What team will play in Las Vegas starting in 2017?", "What are ice-resurfacing machines more commonly known as?", "Besides a goal and an assist, what does a player need for a Gordie Howe hat trick?", "What normally civilized city rioted after losing the 2011 Stanley Cup finals?", "How fast is the fastest slap shot taken by an NHL player?", "How many Canadian teams are in the NHL?", "When a hockey player scores three goals in one game, what is it called?", "The last player in the league to play without a helmet was Craig MacTavish in what year:", "The 1919 Stanley Cup Finals was the only game where no winner was declared due to what?"]
-
 var questions = [{
         question: "What is it called when a player swings their stick at an opposing player or breaks their stick with theirs?",
         choices: ["Clubbing", "Whacking", "Slashing", "Trimming"],
@@ -66,6 +64,7 @@ var questions = [{
 
 ];
 
+// Create elements for each question
 for (var i = 0; i < questions.length; i++) {
     var question = questions[i].question;
     $("#quiz").append(question);
@@ -87,22 +86,18 @@ for (var i = 0; i < questions.length; i++) {
     }
 
     $("#quiz").append(document.createElement("br"));
-    
-    $("#quiz").hide();
-    $("#submit").hide();
-}
-
-// Create elements for each question
 
 // Hide quiz until Start button clicked
+    $("#quiz").hide();
+    $("#submit").hide();
+    $("#remain").hide();
+}
 
-// Re-hide elements after all questions answered or time runs out
 
-// Calculate correct and incorrect answers
 
 $(document).ready(function() {
-    // Timer
 
+// Timer
     $("#start").click(function() {
 
         function startTimer(duration, display) {
@@ -131,12 +126,28 @@ $(document).ready(function() {
 
         $("#quiz").show();
         $("#submit").show();
+        $("#start").hide();
+        $("#remain").show();
     });
 
     $("#submit").click(function() {
-        var right = [];
-        var wrong = [];
+        var right = [0];
+        var wrong = [0];
 
-        
-    }
+        if (radioEle.value === questions.answer) {
+            right++;
+        } else {
+            wrong++;
+        }
+
+        var totalRight = right;
+
+        // $("#score").append("<h1>"Correct: + right + "</h1>");
+        // $("#score").append("<h2>"Incorrect: + wrong + "</h2>");
+
+        $("#quiz").hide();
+        $("#submit").hide();
+        $("#remain").hide();
+        $("#timer").hide();
+    })
 });

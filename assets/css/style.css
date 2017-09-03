@@ -1,0 +1,33 @@
+body{
+	font-family: 'Harmattan', sans-serif;
+	font-size: 34px;
+	padding: 10px;
+	height: 100%;
+	margin: 0px;
+}
+
+.wallpaper{
+	background-image: url(../images/hockeyback.jpg);  
+  	top: 0; 
+  	left: 0; 
+  	min-width: 100%;
+  	min-height: 100%;
+  	text-align: left;
+}
+
+#time-remain{
+	size: 48px;
+}
+
+.jumbotron{
+	text-align: center;
+	width: 100%;
+	background: linear-gradient(to bottom, #a9daf7 0%,#0f9be7 100%);
+}
+
+#start{
+	position: center;
+	margin: 0 auto;
+	padding: 10px;
+	display: block;
+}
